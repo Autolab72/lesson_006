@@ -44,10 +44,10 @@
 # Точнее, в этом случае важен принцип единственной ответственности - https://goo.gl/rYb3hT
 
 # TODO здесь ваш код...
-from mastermind_engine import get_hidden_number, get_number, check_number
+from mastermind_engine import get_hidden_number, get_user_number, check_number
 
 get_hidden_number()
 while True:
 
-    get_number()
+    get_user_number()
     check_number()
