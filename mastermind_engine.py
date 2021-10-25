@@ -9,6 +9,7 @@ def get_hidden_number():
         random_number = randint(1, 9)
         if random_number not in hidden_number:
             hidden_number.append(random_number)
+    print('Число загадано, можете приступать...')
 
 
 def get_user_number():
@@ -31,8 +32,8 @@ def check_number():
     """Проверяем сколько "Быков" и "Коров" """
     counter_bulls = 0
     counter_cow = 0
-    for i in hidden_number:
-        if hidden_number[i] == user_numbers
+    # for i in hidden_number:
+    #     if hidden_number[] == user_numbers
     print("cow", counter_cow, 'bulls', counter_bulls)
 
 get_hidden_number()
