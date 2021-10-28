@@ -44,19 +44,22 @@
 # Точнее, в этом случае важен принцип единственной ответственности - https://goo.gl/rYb3hT
 
 # TODO здесь ваш код...
-from mastermind_engine import get_hidden_number, get_user_number, check_number
+from mastermind_engine import get_hidden_number, check_number
 
-# def get_user_number():
-#     while len(user_numbers) < maximum_number_digits:
-#         user_digital = int(input("Введите число от 1 до 9: "))
-#         if user_digital > 10:
-#             print("Число больше 10, повторите попытку.")
-#             continue
-#         elif user_digital < 1:
-#             print("Число меньше 1, повторите попытку.")
-#             continue
-#         elif user_digital not in user_numbers:
-#             user_numbers.append(user_digital)
-#         else:
-#             print("Вы ввели два одинаковых числа, повторите снова")
-#             continue
+if __name__ == "__main__":
+    hidden_numbers = get_hidden_number()
+    counter_steps = 0
+    print(hidden_numbers)
+    while True:
+            user_input = input("Введите число из четырех различных цифр: ")
+            user_numbers = [int(i) for i in user_input]
+            step_result = check_number(hidden_numbers, user_numbers)
+            counter_steps += 1
+            print(f"{step_result['cows']} коров, {step_result['bulls']} быков")
+            if step_result["bulls"] != len(hidden_numbers):
+                continue
+            else:
+                print(f'Поздравляем! Вы выиграли за {counter_steps} ходов')
+                break
+
+

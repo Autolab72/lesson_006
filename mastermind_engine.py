@@ -16,7 +16,7 @@ def check_number(hidden_numbers, user_numbers):
     """Проверяем сколько "Быков" и "Коров" """
     counter_bulls = 0
     counter_cow = 0
-    for i in range(hidden_numbers):
+    for i in range(len(hidden_numbers)):
         if hidden_numbers[i] == user_numbers[i]:
             counter_bulls += 1
             continue
