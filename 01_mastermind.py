@@ -46,8 +46,17 @@
 # TODO здесь ваш код...
 from mastermind_engine import get_hidden_number, get_user_number, check_number
 
-get_hidden_number()
-while True:
-
-    get_user_number()
-    check_number()
+# def get_user_number():
+#     while len(user_numbers) < maximum_number_digits:
+#         user_digital = int(input("Введите число от 1 до 9: "))
+#         if user_digital > 10:
+#             print("Число больше 10, повторите попытку.")
+#             continue
+#         elif user_digital < 1:
+#             print("Число меньше 1, повторите попытку.")
+#             continue
+#         elif user_digital not in user_numbers:
+#             user_numbers.append(user_digital)
+#         else:
+#             print("Вы ввели два одинаковых числа, повторите снова")
+#             continue

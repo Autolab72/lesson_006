@@ -1,44 +1,30 @@
 from random import randint
 
-hidden_number = []
-user_numbers = []
-maximum_number_digits = 4
-
 def get_hidden_number():
-    while len(hidden_number) < maximum_number_digits:
-        random_number = randint(1, 9)
-        if random_number not in hidden_number:
-            hidden_number.append(random_number)
-    print('Число загадано, можете приступать...')
-
-
-def get_user_number():
-    while len(user_numbers) < maximum_number_digits:
-        user_digital = int(input("Введите число от 1 до 9: "))
-        if user_digital > 10:
-            print("Число больше 10, повторите попытку.")
-            continue
-        elif user_digital < 1:
-            print("Число меньше 1, повторите попытку.")
-            continue
-        elif user_digital not in user_numbers:
-            user_numbers.append(user_digital)
+    hidden_numbers = []
+    while len(hidden_numbers) < 4:
+        if len(hidden_numbers) == 0:
+            random_number = randint(1, 9)
         else:
-            print("Вы ввели два одинаковых числа, повторите снова")
-            continue
+            random_number = randint(0, 9)
+        if random_number not in hidden_numbers:
+            hidden_numbers.append(random_number)
+    return hidden_numbers
 
 
-def check_number():
+def check_number(hidden_numbers, user_numbers):
     """Проверяем сколько "Быков" и "Коров" """
     counter_bulls = 0
     counter_cow = 0
-    # for i in hidden_number:
-    #     if hidden_number[] == user_numbers
-    print("cow", counter_cow, 'bulls', counter_bulls)
-
-get_hidden_number()
-print(hidden_number)
-get_user_number()
-print(user_numbers)
-# check_number()
-
+    for i in range(hidden_numbers):
+        if hidden_numbers[i] == user_numbers[i]:
+            counter_bulls += 1
+            continue
+        elif hidden_numbers[i] in user_numbers:
+            counter_cow += 1
+            continue
+    output = {
+        "cows": counter_cow,
+        "bulls": counter_bulls,
+    }
+    return output
